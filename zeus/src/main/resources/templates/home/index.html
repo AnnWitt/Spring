@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<section>Jakis text (ale trzeba zrobić reload servera a dopiero potem odswiezyc</section>
+<section>
+    <h1>Dynamic string</h1>
+    <p>Name <span th:text="${name}"> ... Some name ...</span></p>
+    <p>Surname <span th:text="${surname}"> ... Some surname ...</span></p>
+    <!--//czasem moze byc, kwestia inteliig bo nie jest swiadomy z ktorego modelu korzysta (ale dziala)-->
+</section>
+
+<!--//obj-->
+
+<section>
+    <h1>obiekt</h1>
+    <p>Name <span th:text="${person.name}"> ... Some name ...</span></p>
+    <p>Surname <span th:text="${person.surname}"> ... Some surname ...</span></p>
+    <!--//czasem moze byc, kwestia inteliig bo nie jest swiadomy z ktorego modelu korzysta (ale dziala);-->
+    <p>Age <span th:text="${person.age}"> ... Some age ...</span></p>
+</section>
+
+
+</body>
+</html>
