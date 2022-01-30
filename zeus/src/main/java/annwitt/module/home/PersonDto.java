@@ -2,6 +2,8 @@ package annwitt.module.home;
 
 public class PersonDto {
 
+
+    //dto - data transfer  obcejt - wystawimy na zwenatrz do kontrolera
     private final String name;
     private final String surname;
     private final int age;

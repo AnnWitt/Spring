@@ -17,11 +17,28 @@
 
 <section>
     <h1>obiekt</h1>
-    <p>Name <span th:text="${person.name}"> ... Some name ...</span></p>
-    <p>Surname <span th:text="${person.surname}"> ... Some surname ...</span></p>
+    <p>Name <span th:text="${person.name}"> ... Some name ..obiekt .</span></p>
+    <p>Surname <span th:text="${person.surname}"> ... Some surname obiekt...</span></p>
     <!--//czasem moze byc, kwestia inteliig bo nie jest swiadomy z ktorego modelu korzysta (ale dziala);-->
-    <p>Age <span th:text="${person.age}"> ... Some age ...</span></p>
+    <p>Age <span th:text="${person.age}"> ... Some age .obiekt..</span></p>
 </section>
+
+<section>
+    <h1>lista</h1>
+    <div th:each="person: ${persons}">
+        <p>......................................................................</p>
+    <p>Name <span th:text="${person.name}"> ... Some name lista...</span></p>
+    <p>Name <span th:text="${person.getName()}"> ... Some name lista...</span></p>
+    <p>Surname <span th:text="${person.surname}"> ... Some surname lista...</span></p>
+    <p>Age <span th:text="${person.age}"> ... Some age lista...</span></p>
+
+    </div>
+
+
+</section>
+
+
+<!--list-->
 
 
 </body>

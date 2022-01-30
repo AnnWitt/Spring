@@ -21,4 +21,5 @@ MVC -model view controler
 spring - zestaw bibliotek z ktorych mozemy zbudowac wlasny framework
 
 Thymeleaf
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 

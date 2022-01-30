@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller //kontroler zwykly, to zwracane bedzie szukal q folderze twmplate
 public class HomeController {
 
@@ -21,6 +24,13 @@ public class HomeController {
 
         //object
         model.addAttribute("person",new PersonDto("obiektImie", "obiekt nazwisko", 36));
+
+        /*list*/
+        List<Object> persons=new ArrayList<>();
+        persons.add(new PersonDto("Imie1","nazwisko1", 43));
+        persons.add(new PersonDto("Imie2","nazwisko2", 23));
+        persons.add(new PersonDto("Imie3","nazwisko3", 40));
+        model.addAttribute("persons",persons);
 
       return "home/index.html";
     };
