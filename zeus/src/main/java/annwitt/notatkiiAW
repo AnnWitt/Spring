@@ -1,1 +1,18 @@
 domyslnie http://localhost:8080/
+
+https://devops.datenkollektiv.de/banner.txt/index.html
+
+clean / instal
+
+jezeli ktos ma intellij spring-boot-maven-plugin not found
+10:00
+<plugins>
+   <plugin>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+      <version>${project.parent.version}</version>
+   </plugin>
+</plugins>
+
+https://stackoverflow-com.translate.goog/questions/63468269/maven-plugin-not-found-in-intellij-ide/64402809?_x_tr_sl=en&_x_tr_tl=pl&_x_tr_hl=pl&_x_tr_pto=sc
+
