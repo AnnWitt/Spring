@@ -24,4 +24,12 @@ public class CommentDto {
     public void setAutor(String autor) {
         this.autor = autor;
     }
+
+    @Override
+    public String toString() {
+        return "CommentDto{" +
+                "text='" + text + '\'' +
+                ", autor='" + autor + '\'' +
+                '}';
+    }
 }
