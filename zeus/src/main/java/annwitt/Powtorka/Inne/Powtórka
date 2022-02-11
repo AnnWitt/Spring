@@ -1,0 +1,21 @@
+MVC - Model / View / Controller
+
+Thymeleaf
+<!-- string -->
+<span th:text="${name}">...</span>
+<!-- object -->
+<span th:text="${person.name}">...</span>
+<!-- list -->
+<div th:each="person : ${personList}">
+   <span th:text="${person.name}">...</span>
+</div>
+
+https://clockworkjava.pl/2020/12/obiekt-domenowy-dto-dao/
+
+DTO Data Transfer Object. Są to obiekty, które są tylko zbiorem danych (pól) i
+posiadają tylko zestaw getterów. Nie posiadają one żadnej logiki biznesowej
+
+DAO (Data Access Object) - Jest to klasa odpowiedzialna za zapisywanie i odczyt obiektów
+domenowy do bazy danych czy innego miejsca, gdzie zapisujemy trwale dane z obiektów domenowych.
+Obecnie o wiele częściej zamiast nazwy DAO funkcjonuje nazwa Repozytorium (z nomenklatury Domain Driven Design).
+

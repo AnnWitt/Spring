@@ -21,8 +21,6 @@ public MenuService menuService;
     @GetMapping("/dashboard")
     public String getDashboard(Model model){
 
-
-
         model.addAttribute("menu",menuService.getMenu());
         model.addAttribute("article",articleService.getArticle());
 
