@@ -33,6 +33,7 @@ public class HomeController {
         model.addAttribute("persons",persons);
 
       return "home/index.html";
+     // return "home.html";
     };
 
 //-----------------------------------------------------------------------------------------------

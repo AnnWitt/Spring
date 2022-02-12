@@ -1,14 +1,12 @@
-package annwitt.Powtorka.dto;
+package Powtorka.dto;
 
-import annwitt.Powtorka.KrolikEnum;
+public class KrolikDto {
+    public String imie;
+    public String kolor;
+    public int wiek;
+    public KrolikPlec plec;
 
-public class KrolikOneDTO {
-public String imie;
-public String kolor;
-public int wiek;
-public KrolikEnum plec;
-
-    public KrolikOneDTO(String imie, String kolor, int wiek, KrolikEnum plec) {
+    public KrolikDto(String imie, String kolor, int wiek, KrolikPlec plec) {
         this.imie = imie;
         this.kolor = kolor;
         this.wiek = wiek;
@@ -24,13 +22,13 @@ public KrolikEnum plec;
     public int getWiek() {
         return wiek;
     }
-    public KrolikEnum getPlec() {
+    public KrolikPlec getPlec() {
         return plec;
     }
 
     @Override
     public String toString() {
-        return "KrolikOneDTO{" +
+        return "\"" +
                 "imie='" + imie + '\'' +
                 ", kolor='" + kolor + '\'' +
                 ", wiek=" + wiek +

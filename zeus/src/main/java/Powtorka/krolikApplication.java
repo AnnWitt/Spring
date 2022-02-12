@@ -1,12 +1,14 @@
-package annwitt.Powtorka;
+package Powtorka;
 
-
+import annwitt.ZeusApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KrolikApp {
+public class krolikApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(annwitt.Powtorka.KrolikApp.class, args);
+        SpringApplication.run(krolikApplication.class, args);
     }
+
 }
