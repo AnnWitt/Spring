@@ -15,12 +15,13 @@ public class BookDto  {
 		this.author = author;
 		this.title = title;
 	}
-
 	public String getAuthor() {
 		return author;
 	}
-
 	public String getTitle() {
 		return title;
+	}
+	public BookDetailsDto getDetails() {
+		return details;
 	}
 }

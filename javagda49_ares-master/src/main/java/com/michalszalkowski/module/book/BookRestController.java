@@ -28,9 +28,13 @@ public class BookRestController {
 		BookEntity book = booksRepository.findById(id).get();
 		return new BookDto(
 				book.getAuthor(),
-				book.getTitle()
+				book.getTitle(),
+				new BookDetailsDto(book.getDetails().getIsbn(),book.getDetails().getLang())
 		);
 	}
+
+	//ti są dtosy a lista pobiera encje i wycieka za duzo danych np podwojnie id, publisher. Trzeba mapowania w
+	//get mapping (np inne nazwy pól author/wroter
 
 	@PostMapping("/api/book")
 	//aby wyciagal komunikat bleu
