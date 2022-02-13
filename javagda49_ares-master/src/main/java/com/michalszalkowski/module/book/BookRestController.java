@@ -1,5 +1,8 @@
 package com.michalszalkowski.module.book;
 
+import com.michalszalkowski.module.book.dto.BookDto;
+import com.michalszalkowski.module.book.dto.BookForm;
+import com.michalszalkowski.module.book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,48 +18,38 @@ import java.util.List;
 @RestController
 public class BookRestController {
 
-	@Autowired
-	private BooksRepository booksRepository;
+    //nie trzymamy dostepu do repo w conmtrollerze (tak jakby byly sqle)
 
-	@GetMapping("/api/book")
-	public List<BookEntity> getBooks() {
-		return booksRepository.findAll();
-	}
+    @Autowired
+    private BookService bookService;
 
-	@GetMapping(value = "/api/book/{id}")
-	public BookDto getBook(@PathVariable Long id) {
-		BookEntity book = booksRepository.findById(id).get();
-		return new BookDto(
-				book.getAuthor(),
-				book.getTitle(),
-				new BookDetailsDto(book.getDetails().getIsbn(),book.getDetails().getLang())
-		);
-	}
+    @GetMapping("/api/book")
+    public List<BookDto> getBooks() {
+        return bookService.list();
+    }
 
-	//ti są dtosy a lista pobiera encje i wycieka za duzo danych np podwojnie id, publisher. Trzeba mapowania w
-	//get mapping (np inne nazwy pól author/wroter
+    @GetMapping(value = "/api/book/{id}")
+    public BookDto getBook(@PathVariable Long id) {
+        return bookService.one(id);
+    }
 
-	@PostMapping("/api/book")
-	//aby wyciagal komunikat bleu
-	public BookEntity newBooks(@RequestBody @Valid BookForm form) { //dodano valiud aby wywolac z bookform
-		BookEntity entity = new BookEntity()
-				.setAuthor(form.getAuthor())
-				.setTitle(form.getTitle());
-		return booksRepository.saveAndFlush(entity);
-	}
+    //ti są dtosy a lista pobiera encje i wycieka za duzo danych np podwojnie id, publisher. Trzeba mapowania w
+    //get mapping (np inne nazwy pól author/wroter
 
-	@PutMapping("/api/book/{id}")
-	public BookEntity updateBooks(@PathVariable Long id, @RequestBody BookForm form) {
-		BookEntity bookFromDb = booksRepository.findById(id).get();
-		bookFromDb.setTitle(form.getTitle());
-		bookFromDb.setAuthor(form.getAuthor());
-		booksRepository.saveAndFlush(bookFromDb);
-		return bookFromDb;
-	}
+    @PostMapping("/api/book")
+    //aby wyciagal komunikat bleu
+    public BookDto newBooks(@RequestBody @Valid BookForm form) { //dodano valiud aby wywolac z bookform
+        return bookService.create(form);
+    }
 
-	@DeleteMapping("/api/book/{id}")
-	public void deleteBooks(@PathVariable Long id) {
-		booksRepository.deleteById(id);
-	}
+    @PutMapping("/api/book/{id}")
+    public BookDto updateBooks(@PathVariable Long id, @RequestBody BookForm form) {
+        return bookService.update(id,form);
+    }
+
+    @DeleteMapping("/api/book/{id}")
+    public void deleteBooks(@PathVariable Long id) {
+		bookService.remove(id);
+    }
 
 }

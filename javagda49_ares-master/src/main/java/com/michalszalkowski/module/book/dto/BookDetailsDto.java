@@ -1,4 +1,4 @@
-package com.michalszalkowski.module.book;
+package com.michalszalkowski.module.book.dto;
 
 public class BookDetailsDto {
     private final String isbn;

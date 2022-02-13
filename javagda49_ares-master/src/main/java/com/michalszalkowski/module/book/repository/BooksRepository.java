@@ -1,5 +1,6 @@
-package com.michalszalkowski.module.book;
+package com.michalszalkowski.module.book.repository;
 
+import com.michalszalkowski.module.book.entity.BookEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
