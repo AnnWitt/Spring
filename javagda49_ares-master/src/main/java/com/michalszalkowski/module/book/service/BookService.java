@@ -2,8 +2,11 @@ package com.michalszalkowski.module.book.service;
 
 import com.michalszalkowski.module.book.dto.BookDto;
 import com.michalszalkowski.module.book.dto.BookForm;
+import com.michalszalkowski.module.book.entity.BookDetailsEntity;
 import com.michalszalkowski.module.book.entity.BookEntity;
+import com.michalszalkowski.module.book.mapper.BookDetailsMapper;
 import com.michalszalkowski.module.book.mapper.BookMapper;
+import com.michalszalkowski.module.book.repository.BookDetailsRepository;
 import com.michalszalkowski.module.book.repository.BooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +17,9 @@ import java.util.List;
 
 @Service
 public class BookService {
+    @Autowired
+    private BookDetailsRepository detailsRepository;
+
     @Autowired
     private BooksRepository repository;
 
@@ -27,15 +33,19 @@ public class BookService {
         BookDto dto = BookMapper.map(book);
         return dto;
     }
-
+//--------------------to mozna przeprobic na mappera, lepiej je miec w mapperach a n ie w serwisacg ---------
     public BookDto create(BookForm form) {
-        BookEntity entity = new BookEntity()
-                .setAuthor(form.getAuthor())
-                .setTitle(form.getTitle());
-        return
-                BookMapper.map(repository.saveAndFlush(entity));
-    }
+        BookDetailsEntity details= BookDetailsMapper.map(form);
 
+        details= detailsRepository.saveAndFlush(details);
+        //tu przechodzi przez baze danych i staje się encją. przedtem jest zwyklum dto'sem
+
+
+        BookEntity book = BookMapper.map(form,details);
+        return
+                BookMapper.map(repository.saveAndFlush(book));
+    }
+//-----------------------------------------------------------------
     public BookDto update(Long id, BookForm form) {
         BookEntity bookFromDb = repository.findById(id).get();
         bookFromDb.setTitle(form.getTitle());

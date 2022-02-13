@@ -3,6 +3,8 @@ package com.michalszalkowski.module.book.mapper;
 
 import com.michalszalkowski.module.book.dto.BookDetailsDto;
 import com.michalszalkowski.module.book.dto.BookDto;
+import com.michalszalkowski.module.book.dto.BookForm;
+import com.michalszalkowski.module.book.entity.BookDetailsEntity;
 import com.michalszalkowski.module.book.entity.BookEntity;
 
 import java.util.List;
@@ -26,6 +28,13 @@ public class BookMapper {
                 //book.getTags().stream().map(x -> x.getValue()).collect(Collectors.toSet())
         );
 
+    }
+
+    public static BookEntity map(BookForm form, BookDetailsEntity details) {
+        return new BookEntity()
+                .setAuthor(form.getAuthor())
+                .setTitle(form.getTitle())
+                .setDetails(details);
     }
 
     ;
