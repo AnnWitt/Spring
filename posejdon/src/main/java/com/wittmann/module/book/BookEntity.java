@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Table(name="book")
 public class BookEntity {
 
+    //pod kontrola bzy danych
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
