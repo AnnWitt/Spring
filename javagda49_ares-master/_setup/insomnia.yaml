@@ -1,0 +1,161 @@
+_type: export
+__export_format: 4
+__export_date: 2022-02-12T22:00:32.946Z
+__export_source: insomnia.desktop.app:v2021.7.2
+resources:
+  - _id: req_ef60dfd93e8040fdae502aad193aacb0
+    parentId: wrk_7e44dbfb3481464fbc157847d398557a
+    modified: 1644699908329
+    created: 1644664954216
+    url: http://localhost:8080/api/book/
+    name: lista
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1644665363267
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_7e44dbfb3481464fbc157847d398557a
+    parentId: null
+    modified: 1644699362216
+    created: 1644664933731
+    name: Ares
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_fe5e6886cb4f47d2867894e534194dbb
+    parentId: wrk_7e44dbfb3481464fbc157847d398557a
+    modified: 1644702896468
+    created: 1644664990902
+    url: http://localhost:8080/api/book/1
+    name: one
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1644665363254.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_afa11f23db44414a92e7c2bb4356302e
+    parentId: wrk_7e44dbfb3481464fbc157847d398557a
+    modified: 1644702850775
+    created: 1644665363217
+    url: http://localhost:8080/api/book/
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"author": "Super Tolkien XXX Version",
+        	"title": "The Lord Of The Smerf"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_de915964616f449da4a5017248c160fa
+    authentication: {}
+    metaSortKey: -1644665363217
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2fd6780e4c4c43ce87c9b175960110f5
+    parentId: wrk_7e44dbfb3481464fbc157847d398557a
+    modified: 1644702855393
+    created: 1644667430267
+    url: http://localhost:8080/api/book/1
+    name: update
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "The Lord Of The Rings 222222222222"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_de915964616f449da4a5017248c160fa
+    authentication: {}
+    metaSortKey: -1644665158716.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a7257ccf92b54cc1a905291d5bc28247
+    parentId: wrk_7e44dbfb3481464fbc157847d398557a
+    modified: 1644666689453
+    created: 1644666662888
+    url: http://localhost:8080/api/book/1
+    name: delete
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1644664954116
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_16e0f22da15b95f9a8c4385f17573e75f48da6da
+    parentId: wrk_7e44dbfb3481464fbc157847d398557a
+    modified: 1644664933752
+    created: 1644664933752
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1644664933752
+    _type: environment
+  - _id: jar_16e0f22da15b95f9a8c4385f17573e75f48da6da
+    parentId: wrk_7e44dbfb3481464fbc157847d398557a
+    modified: 1644664933754
+    created: 1644664933754
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_4bd89b80877d49efb625a976edcf0d42
+    parentId: wrk_7e44dbfb3481464fbc157847d398557a
+    modified: 1644664933733
+    created: 1644664933733
+    fileName: Posejdon
+    contents: ""
+    contentType: yaml
+    _type: api_spec
