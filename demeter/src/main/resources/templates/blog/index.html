@@ -1,0 +1,121 @@
+<!--
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<div th:replace="blog/parts/head.html :: partHead"></div>
+<body>
+<div class="container">
+    <div th:replace="blog/parts/header.html :: partHeader"></div>
+
+   &lt;!&ndash; <div th:replace="blog/parts/menu.html" ::partMenu></div>v1&ndash;&gt;
+    <div th:replace="blog/parts/menu.html :: partMenu(items=${menuItems})"></div>
+
+    <div th:replace="blog/parts/banner.html :: partBanner"></div>
+    <div class="row mb-2">
+        <div class="col-md-6">
+            <div th:replace="blog/parts/post-widget.html :: partPostWidget"></div>
+        </div>
+        <div class="col-md-6">
+            <div th:replace="blog/parts/post-widget.html :: partPostWidget"></div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+
+            <div th:replace="blog/parts/post.html :: partPost"></div>
+
+            <div th:replace="blog/parts/post.html :: partPost"></div>
+
+            <div th:replace="blog/parts/post.html :: partPost"></div>
+
+
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+
+            <div th:replace="blog/parts/about.html :: partAbout"></div>
+            <div th:replace="blog/parts/archives.html :: partArchives"></div>
+            <div th:replace="blog/parts/elsewhere.html :: partElsewhere"></div>
+
+        </aside>
+    </div>
+</main>
+
+<div th:replace="blog/parts/footer.html :: partFooter"></div>
+
+</body>
+
+</html>
+-->
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- head.html:START-->
+<div th:replace="blog/fragment/head.html :: template"></div>
+<!-- head.html:END-->
+<body>
+
+<div class="container">
+    <!-- header.html:START-->
+    <div th:replace="blog/fragment/header.html :: template"></div>
+    <!-- header.html:END -->
+
+    <!-- menu.html:START-->
+    <div th:replace="blog/fragment/menu.html :: template(items=${menuItems})"></div>
+    <!-- menu.html:END-->
+
+    <!-- banner.html:START-->
+    <div th:replace="blog/fragment/banner.html :: template"></div>
+    <!-- banner.html:END-->
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+            <!-- post-widget.html:START-->
+            <div th:replace="blog/fragment/post-widget.html :: template"></div>
+            <!-- post-widget.html:END-->
+        </div>
+        <div class="col-md-6">
+            <!-- post-widget.html:START-->
+            <div th:replace="blog/fragment/post-widget.html :: template"></div>
+            <!-- post-widget.html:END-->
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <!-- post.html:START -->
+            <section th:each="post: ${posts}">
+            <div th:replace="blog/fragment/post.html :: template(post=${post})"></div>
+            <!-- post.html:END -->
+            </section>
+
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <!-- about.html:START -->
+            <div th:replace="blog/fragment/about.html :: template"></div>
+            <!-- about.html:START -->
+
+            <!-- archives.html:START -->
+            <div th:replace="blog/fragment/archives.html :: template"></div>
+            <!-- archives.html:END -->
+
+            <!-- elsewhere.html:START -->
+            <div th:replace="blog/fragment/elsewhere.html :: template"></div>
+            <!-- elsewhere.html:END -->
+        </aside>
+    </div>
+</main>
+
+<!-- footer.html:START -->
+<div th:replace="blog/fragment/footer.html :: template"></div>
+<!-- footer.html:START -->
+
+</body>
+</html>

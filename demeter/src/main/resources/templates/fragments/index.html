@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link media="all" rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<h1>Fragments Example</h1>
+
+<div th:replace="fragments/general :: header"></div>
+<div th:replace="fragments/general :: menu"></div>
+<section>
+Example page 1<br>
+Example page 2<br>
+Example page 3<br>
+</section>
+<div th:replace="fragments/general :: footer"></div>
+</body>
+</html>

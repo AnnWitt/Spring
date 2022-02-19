@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CMS</title>
+    <link media="all" rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+<div th:replace="cms/parts/header.html :: header"></div>
+<div th:replace="cms/parts/menu.html :: menu"></div>
+    </header>
+
+<section>
+    <h1>Page</h1>
+</section>
+
+<div th:replace="cms/parts/footer.html :: stopka"></div>
+</body>
+</html>

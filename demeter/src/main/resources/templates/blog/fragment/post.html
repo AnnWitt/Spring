@@ -1,0 +1,10 @@
+<!--<div th:partPost class="blog-post">-->
+<div th:fragment="template(post)" class="blog-post">
+    <h2 class="blog-post-title" th:text="${post.title}">...Title..</h2>
+    <p class="blog-post-meta">
+        <span th:text="${post.date}"> ... Date...</span>
+        <span th:text="${post.id}"> ... id...</span>
+        <a href="#" th:text="${post.author}"> ...Author...</a></p>
+
+    <p th:text="${post.content}">... content...</p>
+</div>
