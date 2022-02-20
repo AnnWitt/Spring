@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 public class ApplicationConfig {
 
     //moga sie zaczytać wartosci
-    @Value("${domain}") private String domain;
+    @Value("${domain}") private String domain; //@value odniesienie do properties
     @Value("${email}")private String email;
     @Value("${user}")private String user;
     @Value("${theme}")private String theme;

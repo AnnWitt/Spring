@@ -1,6 +1,6 @@
 package com.michalszalkowski.module.car.mapper;
 
-import com.michalszalkowski.module.car.dto.CarDetailsDto;
+import com.michalszalkowski.module.car.mapper.dto.CarDetailsDto;
 import com.michalszalkowski.module.car.entity.CarDetailsEntity;
 
 public class CarDetailsMapper {

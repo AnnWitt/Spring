@@ -1,4 +1,4 @@
-package com.michalszalkowski.module.car.dto;
+package com.michalszalkowski.module.car.mapper.dto;
 
 public class CarDetailsDto {
 

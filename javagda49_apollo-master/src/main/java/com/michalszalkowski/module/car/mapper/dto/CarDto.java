@@ -1,8 +1,8 @@
-package com.michalszalkowski.module.car.dto;
+package com.michalszalkowski.module.car.mapper.dto;
 
 public class CarDto {
 
-	private Long id;
+	//private Long id;
 	private String guid;
 	private String make;
 	private String model;
@@ -13,14 +13,14 @@ public class CarDto {
 	private String price;
 	private CarDetailsDto details;
 
-	public Long getId() {
+/*	public Long getId() {
 		return id;
 	}
 
 	public CarDto setId(Long id) {
 		this.id = id;
 		return this;
-	}
+	}*/
 
 	public String getGuid() {
 		return guid;

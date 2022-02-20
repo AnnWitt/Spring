@@ -13,11 +13,14 @@ public class CarService {
 	@Autowired
 	private CarRepository carRepository;
 
-	public CarEntity getOne(Long id) {
-		return carRepository.getOne(id);
+	public CarEntity getOne(String guid) {
+		return carRepository.getOneByGuid(guid);
 	}
 
-	public List<CarEntity> getAll() {
+	public List<CarEntity> getAll(String color,String make, Long year) {
+		if (color!=null) {return carRepository.findAllByColor(color);}
+		if (make!=null) {return carRepository.findAllByMake(make);}
+		if (year!=null) {return carRepository.findAllByYearGreaterThan(year);}
 		return carRepository.findAll();
 	}
 
