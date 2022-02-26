@@ -1,6 +1,7 @@
 package com.michalszalkowski.tyche.module.media.storage;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -10,9 +11,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
+@Service
 public class FileSystemStorage {
 
-    @Value("${mediaRootLocation")
+    @Value("${mediaRootLocation}")
     private String path;
 
     public void store(MultipartFile file) {
@@ -22,7 +24,6 @@ public class FileSystemStorage {
                     .resolve(Paths.get(file.getOriginalFilename()))
                     .normalize()
                     .toAbsolutePath();
-
             try (InputStream inputStream = file.getInputStream()) {
                 Files.copy(inputStream, destinationFile, StandardCopyOption.REPLACE_EXISTING);
             }
