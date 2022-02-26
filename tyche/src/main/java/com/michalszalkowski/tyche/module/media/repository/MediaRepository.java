@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 public interface MediaRepository
         extends JpaRepository<MediaEntity, Long>,
         JpaSpecificationExecutor<MediaEntity> {
+    MediaEntity findOneByUuid(String uuid);
 }

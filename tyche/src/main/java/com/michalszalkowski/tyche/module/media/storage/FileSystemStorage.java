@@ -58,4 +58,8 @@ public class FileSystemStorage {
         return mediaRepository.findAll();
     }
 
+    public String getFullPathFor(String uuid) {
+        MediaEntity media=mediaRepository.findOneByUuid(uuid);
+        return String.format("%s/%s",path,media.getFileName());
+    }
 }
